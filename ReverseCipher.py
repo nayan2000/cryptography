@@ -2,8 +2,13 @@
 
 class ReverseCipher(object):
 
-    def encrypt(data):
-        return data[::-1]
+    def __init__(self, data):
+        self.data = data
+
+    def encrypt(self):
+        encrypted_data = self.data[::-1]
+        return encrypted_data
         
-    def decrypt(data):
-        return data[::-1]
+    def decrypt(self):
+        decrypted_data = self.data[::-1]
+        return decrypted_data

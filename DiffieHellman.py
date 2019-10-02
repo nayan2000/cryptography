@@ -1,4 +1,5 @@
 class DiffieHellman(object):
+    
     def __init__(self, public_key1, public_key2, private_key):
         self.public_key1 = public_key1
         self.public_key2 = public_key2
@@ -16,16 +17,16 @@ class DiffieHellman(object):
         self.full_key = full_key
         return full_key
     
-    def encrypt_message(self, message):
-        encrypted_message = ""
+    def encrypt_data(self, data):
+        encrypted_data = ""
         key = self.full_key
-        for c in message:
-            encrypted_message += chr(ord(c)+key)
-        return encrypted_message
+        for c in data:
+            encrypted_data += chr(ord(c)+key)
+        return encrypted_data
     
-    def decrypt_message(self, encrypted_message):
-        decrypted_message = ""
+    def decrypt_data(self, encrypted_data):
+        decrypted_data = ""
         key = self.full_key
-        for c in encrypted_message:
-            decrypted_message += chr(ord(c)-key)
-        return decrypted_message
+        for c in encrypted_data:
+            decrypted_data += chr(ord(c)-key)
+        return decrypted_data
